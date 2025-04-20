@@ -1,0 +1,104 @@
+{
+  "name": "get-back-to-work",
+  "displayName": "Get Back To Work",
+  "description": "VS Code extension that alarms you when you go idle with sound and visual alerts",
+  "version": "0.0.1",
+  "publisher": "parsaharooni",
+  "author": {
+    "name": "Parsa Harooni"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParsaHarooni/get-back-to-work"
+  },
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "focus",
+    "time management",
+    "alerts",
+    "idle",
+    "notifications",
+    "sound"
+  ],
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "get-back-to-work.startMonitoring",
+        "title": "Get Back To Work: Start Monitoring"
+      },
+      {
+        "command": "get-back-to-work.stopMonitoring",
+        "title": "Get Back To Work: Stop Monitoring"
+      },
+      {
+        "command": "get-back-to-work.showOptions",
+        "title": "Get Back To Work: Show Options"
+      },
+      {
+        "command": "get-back-to-work.soundSettings",
+        "title": "Get Back To Work: Sound Settings"
+      }
+    ],
+    "configuration": {
+      "title": "Get Back To Work",
+      "properties": {
+        "getBackToWork.idleTimeInMinutes": {
+          "type": "number",
+          "default": 5,
+          "description": "Time in minutes before showing the idle alarm"
+        },
+        "getBackToWork.checkIntervalInSeconds": {
+          "type": "number",
+          "default": 1,
+          "description": "Interval in seconds to check for idle status"
+        },
+        "getBackToWork.soundEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to enable sound alerts"
+        },
+        "getBackToWork.soundType": {
+          "type": "string",
+          "enum": ["beep", "alarm", "notification"],
+          "default": "beep",
+          "description": "Type of sound to play when idle alert is triggered"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile",
+    "check-types": "tsc --noEmit",
+    "lint": "echo 'Skipping lint'",
+    "test": "echo 'Skipping tests'",
+    "vsix": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/node": "20.x",
+    "@types/mocha": "^10.0.10",
+    "esbuild": "^0.25.1",
+    "typescript": "^5.8.2",
+    "mocha": "^10.2.0"
+  }
+}

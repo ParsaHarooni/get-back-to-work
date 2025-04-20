@@ -11,8 +11,6 @@ A VS Code extension that alarms you when you go idle in your editor, helping you
 - **Configurable Settings**: Set your own idle time thresholds and alert preferences
 - **Quick Access Menu**: Manage the extension directly from the status bar
 
-![Status Bar Countdown](https://raw.githubusercontent.com/username/get-back-to-work/main/images/status-bar.png)
-
 ## How It Works
 
 The extension actively monitors your coding activity through keyboard input, cursor movements, and window focus. When it detects inactivity beyond your configured threshold, it alerts you with both visual and audio notifications to remind you to get back to work.
@@ -58,16 +56,12 @@ Click on the status bar item to access the quick menu:
 - Change idle time threshold
 - Configure sound settings
 
-![Options Menu](https://raw.githubusercontent.com/username/get-back-to-work/main/images/options-menu.png)
-
 ## Sound Settings
 
 The Sound Settings panel lets you:
 - Enable/disable sound alerts
 - Choose between different sound types
 - Test sounds before selecting them
-
-![Sound Settings](https://raw.githubusercontent.com/username/get-back-to-work/main/images/sound-settings.png)
 
 ## Installation
 
@@ -108,7 +102,11 @@ npm run vsix
 
 ## Feedback and Contributions
 
-Feedback and contributions are welcome! Please open an issue or submit a PR on the [GitHub repository](https://github.com/username/get-back-to-work).
+Feedback and contributions are welcome! Please open an issue or submit a PR on the [GitHub repository](https://github.com/ParsaHarooni/get-back-to-work).
+
+## Author
+
+[Parsa Harooni](https://github.com/ParsaHarooni)
 
 ## License
 
